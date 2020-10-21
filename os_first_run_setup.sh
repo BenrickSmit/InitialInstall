@@ -376,7 +376,7 @@ fedora_setup() {
 	sudo dnf install chrome-gnome-shell
 	
 	# Find the list of installable gtk themes
-	GTK_THEMES=$( dnf search gtk | grep -o "[+0-9.a-zA-Z\-]\+.noarch" )
+	GTK_THEMES=$( dnf search gtk | grep -o "[+0-9.a-zA-Z\-]\+theme.noarch" )
 	sudo dnf install ${GTK_THEMES}
 
 	# Find the list of installable cursor themes
@@ -433,7 +433,7 @@ ubuntu_setup() {
 	sudo apt-get install chrome-gnome-shell
 	
 	# Find the list of installable gtk themes
-	GTK_THEMES=$( apt-get search gtk | grep -o "[+0-9.a-zA-Z\-]\+.noarch" )
+	GTK_THEMES=$( apt-get search gtk | grep -o "[+0-9.a-zA-Z\-]\+theme.noarch" )
 	sudo apt-get install ${GTK_THEMES}
 
 	# Find the list of installable cursor themes
