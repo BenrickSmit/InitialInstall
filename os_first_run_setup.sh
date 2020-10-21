@@ -378,6 +378,9 @@ fedora_setup() {
 	# Find the list of installable gtk themes
 	GTK_THEMES=$( dnf search gtk | grep -o "[+0-9.a-zA-Z\-]\+theme.noarch" )
 	sudo dnf install ${GTK_THEMES}
+	# Remove the unusued dependencies
+	sudo dnf remove jgmenu 
+
 
 	# Find the list of installable cursor themes
 	CURSOR_THEMES=$( dnf search cursor-theme | grep -o "[+0-9.a-zA-Z\-]\+.noarch" )
@@ -435,6 +438,7 @@ ubuntu_setup() {
 	# Find the list of installable gtk themes
 	GTK_THEMES=$( apt-get search gtk | grep -o "[+0-9.a-zA-Z\-]\+theme.noarch" )
 	sudo apt-get install ${GTK_THEMES}
+	sudo apt-get remove jgmenu
 
 	# Find the list of installable cursor themes
 	CURSOR_THEMES=$( apt-get search cursor-theme | grep -o "[+0-9.a-zA-Z\-]\+.noarch" )
